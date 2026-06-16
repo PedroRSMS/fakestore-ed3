@@ -37,9 +37,9 @@ export default function ProductDetails() {
           <h2>{product.title}</h2>
           <p className={styles.description}>{product.description}</p>
           <div className={styles.rating}>
-            {'★'.repeat(Math.round(product.rating.rate))}
-            {'☆'.repeat(5 - Math.round(product.rating.rate))}
-            <span>({product.rating.count} avaliações)</span>
+            {'★'.repeat(Math.round(product.rating?.rate ?? 0))}
+            {'☆'.repeat(5 - Math.round(product.rating?.rate ?? 0))}
+            <span>({product.rating?.count ?? 0} avaliações)</span>
           </div>
           <span className={styles.price}>
             ${product.price.toFixed(2)}

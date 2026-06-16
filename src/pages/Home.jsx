@@ -23,7 +23,7 @@ export default function Home() {
 
     api.get('/products/categories')
       .then(res => setCategories(res.data))
-      .catch(() => {})
+      .catch(() => console.error('Erro ao carregar categorias'))
   }, [])
 
   const filtered = selectedCategory
